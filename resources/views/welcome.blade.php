@@ -35,6 +35,9 @@
                 <div class="flex justify-center">
                     <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Staytus System Admin / DevOps Engineer Test</h2>
                 </div>
+                <div class="flex justify-center">
+                    <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">for Marc Jerico F. Lusoc</h2>
+                </div>
 
                 <div class="mt-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
