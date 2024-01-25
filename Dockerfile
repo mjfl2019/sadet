@@ -2,7 +2,7 @@ FROM php:8.2-apache
 WORKDIR /var/www/html
 
 # Mod Rewrite
-RUN a2enmod Rewrite
+RUN a2enmod rewrite
 
 # Linux Library
 RUN apt-get update -y && apt-get install -y \
