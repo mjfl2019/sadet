@@ -28,6 +28,5 @@ jobs:
         ECR_REPOSITORY: sadet
         IMAGE_TAG: latest
       run:
-        aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 767397855441.dkr.ecr.ap-southeast-1.amazonaws.com
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
