@@ -16,8 +16,6 @@ RUN apt-get update -y && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev
 
-RUN dnf install git-all
-
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
