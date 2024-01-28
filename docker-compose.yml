@@ -1,11 +1,12 @@
 services:
     laravel-docker:
+        working_dir: /var/www/html
         build:
             context: ./vendor/laravel/sail/runtimes/8.3
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: sail-8.3/app
+        image: laravel-sadet-test
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -25,11 +26,11 @@ services:
             - mysql
             - redis
     mysql:
-        image: 'mysql/mysql-server:8.0'
+        image: 'sadet-mysql'
         ports:
             - '${FORWARD_DB_PORT:-3307}:3306'
         environment:
-            MYSQL_ROOT_PASSWORD: 'mysample_pass'
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ROOT_HOST: '%'
             MYSQL_DATABASE: '${DB_DATABASE}'
             MYSQL_USER: '${DB_USERNAME}'
@@ -50,7 +51,7 @@ services:
             timeout: 5s
         
     redis:
-        image: 'redis:alpine'
+        image: 'sadet-redis'
         ports:
             - '${FORWARD_REDIS_PORT:-6379}:6379'
         volumes:
